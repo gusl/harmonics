@@ -1,8 +1,8 @@
 PlotOctave <- function(freq) {
-  abline(v=freq*2^(0:7/7)) ## White keys: 7 equal divisions
+  abline(v=freq*2^(-0.5:6.5/7)) ## White keys: 7 equal divisions
   blacks <- c(1,2,4,5,6)   ## 5 black keys: 0.8-1.2, 1.8-2.2, 3.8-4.2, 4.8-5.2, 5.8-6.2
   for (black in blacks){
-    bs <- freq * 2 ^ c((black-0.25)/7, (black+0.25)/7)
+    bs <- freq * 2 ^ c((black-0.75)/7, (black-0.25)/7)
     rect(bs[1], 0.5, bs[2], 1, col='black')
   }
 }
